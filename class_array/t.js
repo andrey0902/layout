@@ -1,5 +1,5 @@
 var obj = {
-  className: 'open menu'
+  className: ''
 }
 
 function addNewName(obj, name){
@@ -23,12 +23,25 @@ function addNewElement(obj, name){
 	return obj.className =mas.join(' ');
 	
 }
-
-
-
-
-
-
 addNewElement(obj,'f5647g');
-
 console.log(obj);
+
+var str = 'list-style-image';
+
+function camelize(str){
+	var mas =str.split('-');
+	for (var i=1; i<mas.length; i++){
+		var netWord=mas[i];
+		var ferstLitter = mas[i].charAt(0).toUpperCase();
+		for (var j=1; j< netWord.length; j++){
+		  ferstLitter+=netWord.charAt(j);
+	}
+	mas[i] =ferstLitter;
+	}
+	str = mas.join('');
+	
+}
+
+camelize(str);
+
+

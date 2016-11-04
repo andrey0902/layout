@@ -38,10 +38,10 @@ function camelize(str){
 	}
 	mas[i] =ferstLitter;
 	}
-	str = mas.join('');
+	return str = mas.join('');
 	
 }
 
-camelize(str);
+console.log(camelize(str));
 
 

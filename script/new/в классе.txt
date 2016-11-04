@@ -1,0 +1,25 @@
+/*var subj_c = + prompt('Введите количество предметов');*/
+var people_c = + prompt ('Введите количество студентов');
+
+var subject_queue = [
+	'Math',
+	'Biolog',
+	'Fizra'
+];
+
+for ( var i= 0; i<people_c; i++){
+	var name = prompt ('Введите имя студента');
+	document.writeln(`<h2>${name}</h2>`);
+	var marks =[];
+	
+	document.writeln('<ul>');
+	for (var j=0;  j < subject_queue.length; j++){
+		var sabject_name = subject_queue[j];
+		mark= prompt('введите оценоку'+ sabject_name);
+
+
+		document.writeln(`<li>${sabject_name}- ${mark}</li>`);
+	}
+	document.writeln('</ul>');
+/*	document.writeln(`<p>${name}:${marks.join(', ')}</p>`);*/
+	}

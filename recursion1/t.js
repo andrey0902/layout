@@ -21,3 +21,15 @@ var rezault =alignArray(mas);
  
  console.log(rezault);
   console.log(alignArray(mas3));
+
+  function compareArray (a1,a2){
+if(a1.length!==a2.length){
+	return false;
+}
+for (var i=0; ia.length; i++){
+if(a1[i] !==a2[i]){
+	return false;
+}
+}
+return true;
+}

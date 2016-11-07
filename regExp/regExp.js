@@ -4,7 +4,7 @@ var str = document.querySelector('p').innerHTML;
 var regexp = /(127.\d+\.\d+\.\d+)\s-\s- \[(\d+.?\w+.?\d+:\d+:\d+:\d+)/ig;
 
 var result;
-console.log(result);
+
 
 while(result = regexp.exec(str) ){
 	console.log(result);

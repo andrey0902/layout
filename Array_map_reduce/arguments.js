@@ -90,3 +90,13 @@ getElement1(setings);
 
 setings.text = 'New message';
 getElement1(setings);
+
+
+function apply(x){
+	if(arguments.length!= 0){
+		return 1;
+	}
+	return 0;
+}
+
+console.log(apply('sdfls'));

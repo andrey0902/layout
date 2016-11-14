@@ -34,11 +34,3 @@ var myres= str.replace(regexp,replace)
 	var reg= /\b[0-2][0-9][-:][0-5][0-9]/ig;
 	var res = temp.match(reg);
 	console.log(res);
-	
-	
-	var reg = /".+?"/g;
-
-var str = 'a "witch" and her "broom" is one';
-
-alert( str.match(reg) ); // "witch" and her "broom"
-

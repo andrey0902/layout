@@ -1,3 +1,91 @@
+var d= document.getElementById('d');
+var d2= document.getElementById('d2');
+var p1= document.getElementById('p1');
+d.addEventListener('click',say1);
+
+
+
+function say1(event){
+alert("target = " + event.target.tagName + ", this=" + this.tagName);
+	alert(' главный див');
+}
+
+
+event.stopPropagation()
+var but_id = document.getElementById('k1');
+var butK2= document.getElementById('k2');
+var k3= document.getElementById('k3');
+var k4 = document.getElementById('k4');
+var k5 = document.getElementById('k5');
+var k6 = document.getElementById('k6');
+var k7 = document.getElementById('k7');
+var text= document.getElementById('text');
+var t1= document.getElementById('t1');
+
+
+text.addEventListener('focus',fouc);
+butK2.addEventListener('click',say);
+but_id.addEventListener('click',sayHi);
+but_id.addEventListener('onkeydown',sayHi);
+k3.addEventListener('mouseup',Mousup);
+k4.addEventListener('mousedown',Mousdoun);
+k5.addEventListener('mousemove',Mousemov);
+
+k6.addEventListener('mouseover',Mouseover);
+k7.addEventListener('mouseout',Mouseout);
+
+
+(function(){
+	t1.value ='Мы получили фокус сразу';
+})()
+
+function fouc(){
+	this.value='Мы получили фокус';
+}
+
+
+
+function Mouseover(){
+	console.log('при навидении мыши на блок');
+}
+function Mouseout(){
+	console.log('при вывода мыши из блока');
+}
+
+
+function Mousemov(){
+	console.log('при движении  мыши ');
+}
+function Mousup(){
+	console.log('когда мыш отпустили');
+	
+}
+function Mousdoun(){
+	console.log('когда мыш нажали');
+}
+
+
+function say(){
+	if(but_id.hidden ==true){
+		console.log(but_id.hidden);
+		but_id.hidden= false;
+		/*but_id.style.display = '';*/
+			
+	}else{
+		but_id.hidden= true;   /*but_id.style.display = 'none';*/
+	}
+	
+	
+	console.log(this.value);
+}
+
+function sayHi(event){
+	console.dir(event);
+	console.log('HELOW ADMIN');
+}
+
+
+
 
 var show = document.querySelectorAll('.button');
 console.log(show);

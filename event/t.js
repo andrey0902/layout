@@ -2,16 +2,29 @@ var d= document.getElementById('d');
 var d2= document.getElementById('d2');
 var p1= document.getElementById('p1');
 d.addEventListener('click',say1);
-
-
-
+window.addEventListener('click',function(){console.log('HELOW Im window')})
+var a;
+var b;
 function say1(event){
-alert("target = " + event.target.tagName + ", this=" + this.tagName);
-	alert(' главный див');
+	
+	var target = event.target;
+console.log("target = " + event.target.tagName + ", this=" + this.tagName);
+console.log('target name  '+ event.target.tagName + ' prosto target '+ event.target);
+var date= target.getAttribute('data-action');
+var color= target.getAttribute('style');
+console.dir(a=event);
+console.dir(this)
+console.dir(b = event.currentTarget)
+console.dir(event.target);
+	if(event.target.tagName=='DIV'){
+		console.log('div');
+	}
+	
+	
 }
 
 
-event.stopPropagation()
+
 var but_id = document.getElementById('k1');
 var butK2= document.getElementById('k2');
 var k3= document.getElementById('k3');
@@ -88,7 +101,7 @@ function sayHi(event){
 
 
 var show = document.querySelectorAll('.button');
-console.log(show);
+//console.log(show);
 for (var i =0; i<show.length; i++){
 	var batton =show[i];
 	batton.onclick = function (){

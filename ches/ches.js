@@ -16,8 +16,20 @@ img1.src = img.src = './img/p.gif';
 img1.style.width= '50px';
 img1.style.height= '50px';
 
-
-
+table.addEventListener('click',hi);
+function hi(e){
+	var target =e.target;
+	while(target!=table){
+		if(target.tagName=="TD"){
+		console.dir('ура нашли ТД');
+		return;
+	}target= target.parentNode; 
+	}
+	
+	console.dir(target);
+	console.log(target.tagName);
+	console.log(target.getAttribute('style'))
+}
 
 
 for (var i=0; i<8; i++){

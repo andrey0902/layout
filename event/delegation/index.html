@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+<link href="style1.css" rel="stylesheet" type="text/css">
+
+
+<style>
+body{
+background-color: ;
+} 
+p{
+margin: 0px;
+}
+.content{
+ margin: 100px auto;
+ border: 1px solid black;
+ width: 600px;
+}
+.aticl{
+position: relative;
+padding: 10px 10px 5px 10px;
+display: block;
+background:#edf5e1;
+border-top:2px solid  #c4df9b;
+margin-bottom: 10px;
+}
+.button{
+position: absolute;
+right: 20px;
+top: 20px;
+color: red;
+font-size:20px;
+}
+#d,#d2{
+margin-left:50px; 
+border: 1px solid black;
+width: 300px;
+height: 300px;
+background: red;
+}
+#d2{
+width: 200px;
+height: 200px;
+background: green;
+}
+.list span:hover {
+    font-weight: bold;
+}
+</style> 
+</head>
+   
+<body>
+
+    <div class="list">
+        <ul>
+            <li>Животные
+              <ul>
+                  <li>Млекопитающие
+                      <ul>
+                        <li>Коровы</li>
+                         <li>Ослы</li>
+                         <li>Собаки</li>
+                         <li>Тигры</li>
+
+                     </ul>
+                 </li>
+                  <li>
+                    Другие
+                      <ul>
+                          <li>Змеи</li>
+                          <li>Птицы</li>
+                          <li>Ящерицы</li>
+                      </ul>
+                  </li>
+              </ul>
+            </li>
+            <li>Рыбы
+                <ul>
+                    <li>Аквариумные
+                        <ul>
+                            <li>Гуппи</li>
+                            <li>Скалярии</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Морские
+                        <ul>
+                            <li>Морская форель</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div id="menu">
+      <button data-action="save">Save</button>
+        <button data-action="load">Load</button>
+        <button data-action="open">Open</button>
+    </div>
+
+<script src="delegation.js"> </script>
+</body>
+
+</html>

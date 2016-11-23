@@ -1,4 +1,11 @@
-
+var t='translate3d(-753px, 0px, 0px)';
+var text;
+var reg=/translate3d[(](-?\d*)px/ig;
+var num=t.replace(reg,function (str,p1) {
+	num=p1;
+})
+console.log();
+console.log(num)
 var str = document.querySelector('p').innerHTML;
 
 var regexp = /(127.\d+\.\d+\.\d+)\s-\s- \[(\d+.?\w+.?\d+:\d+:\d+:\d+)/ig;
@@ -7,7 +14,7 @@ var result;
 
 
 while(result = regexp.exec(str) ){
-	console.log(result);
+	//console.log(result);
 }
 	
 var myres= str.replace(regexp,replace)	

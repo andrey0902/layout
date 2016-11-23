@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html ng-app="testApp">
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+
+<script src="Libraries/angular.js"></script>
+    <script>
+        //
+        var model={
+            user:'User1',
+            courses: [{ name: "HTML, CSS", passed: true },
+                {name:'java,piton',passed:true},
+                {name:'ne.time,App.Git',passed:true},
+                { name: "HTML5 &amp; CSS3", passed: true },
+                { name: "AngularJS", passed: true }]
+        };
+        // new model
+       var testApp = angular.module("testApp",[]);
+
+
+        // new controler
+
+        testApp.controller("TestCtrl", function ($scope){
+            $scope.data=model;
+
+            //behevior
+
+            $scope.addNewCourse= function(){
+                $scope.data.courses.push({
+                    name:$scope.curserName,
+                    passed: false
+                });
+                $scope.curserName='';
+            };
+            $scope.showText=function (passed) {
+                return passed?'Yes': 'No';
+            }
+            $scope.setStyle=function (passed) {
+                return passed?'color:green':'color: red;font-familu: bold;';
+            }
+       });
+    </script>
+</head>
+
+<body ng-controller="TestCtrl">
+    <div>
+       <h2>Имя: {{data.user}}</h2>
+        <h3>Количество курсов: {{data.courses.length}}</h3>
+
+    </div>
+
+    <div>
+        <input ng-model="curserName"/>
+        <button ng-click="addNewCourse()">Tusni</button>
+    </div>
+    <div>
+        <table>
+           <thead>
+           <tr>
+               <th>Курс</th>
+               <th></th>
+               <th>Пройден</th>
+           </tr>
+           </thead>
+           <tbody>
+
+           <!--ng-repeat - директива указывает, что блок разметки должен быть повторен для каждого элемента в источнике данных.
+               Выражение передаваемое в директиву (атрибут) - "<элемент> in <коллекция>"-->
+               <tr ng-repeat="course in data.courses">
+                  <td>{{course.name}}</td>
+                   <td>
+                       <input type="checkbox" ng-model="course.passed"/>
+                       <span style="{{setStyle(course.passed)}}">
+                           {{showText(course.passed)}}
+                       </span>
+                   </td>
+
+               </tr>
+
+           </tbody>
+       </table>
+    </div>
+
+
+
+
+</body>
+
+</html>

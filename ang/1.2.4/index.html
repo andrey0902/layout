@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html ng-app="IncludedApp">
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+
+<script src="Libraries/angular.js"></script>
+    <script>
+            var IncludedApp=angular.module('IncludedApp',[]);
+
+            IncludedApp.controller('IncludedAppCtrl',function ($scope) {
+
+
+                $scope.it = [{ name: "item 1", value: 'table' },
+                    { name: "item 2", value: 'list' },
+                    { name: "item 3", value: 'listNum' }];
+
+                $scope.option=[{name:'table',value:'table'},
+                    {name:'list',value:'list'},
+                    {name:'numList',value:'numList'}];
+                $scope.mode = $scope.option[0];
+            })
+    </script>
+</head>
+
+<body >
+    <div ng-controller="IncludedAppCtrl">
+      <select ng-model="mode" ng-options="item.name for item in option track by item.value "></select>
+
+        <div ng-switch on="mode.value">
+
+        <table ng-switch-when="table">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Value</td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in it">
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.value}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <ul class="list-group" ng-switch-when="list">
+            <li ng-repeat="item in it" class="list-group-item list-group-item-info">{{item.name}}:{{item.value}}</li>
+        </ul>
+
+        <ol class="list-group" ng-switch-when="numList">
+            <li ng-repeat="item in it" class="list-group-item">
+                <span class="badge">{{item.value}}</span>
+                {{item.name}}
+            </li>
+        </ol>
+
+
+
+    </div>
+
+
+    </div>
+</body>
+
+</html>

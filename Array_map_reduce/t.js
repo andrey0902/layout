@@ -1,5 +1,15 @@
 var arr = [ 1, 5,-3,-7,2,8,0,-88];
 
+function filterRange(arr,a,b) {
+	var newArr= arr.filter(function(item){
+		return item>=a&&item<=b;
+	});
+return newArr;
+}
+var newA=filterRange(arr,0,7);
+console.log(newA);
+
+
 var arr1 = arr.forEach(function(item){
 	item += 100;
 	console.log(item);

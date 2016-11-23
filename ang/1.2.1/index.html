@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html ng-app="SelectedApp">
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+    <style>
+        .white{
+            background-color: white;
+        }
+        .class1 {
+            background-color: lightgreen;
+        }
+
+        .class2 {
+            background-color: lightblue;
+        }
+    </style>
+<script src="Libraries/angular.js"></script>
+    <script>
+            var SelectedApp=angular.module('SelectedApp',[]);
+
+            SelectedApp.controller('SelectedAppCtrl',function ($scope) {
+                $scope.items=['Item1','Item2','Item3','Item4'];
+                $scope.selected='Item1';
+
+                $scope.it = [{ prop1: "item 1", prop2: 1 },
+                    { prop1: "item 2", prop2: 2 },
+                    { prop1: "item 3", prop2: 3 }];
+                $scope.selected1 = $scope.it[0];
+
+            })
+    </script>
+</head>
+
+<body ng-controller="SelectedAppCtrl">
+    <div>
+        <select ng-model="selected" ng-options="item for item in items"></select>
+    </div>
+    <br><br><br>
+    <div>
+        <select ng-model="selected1"
+                ng-options="item.prop1 for item in it track by item.prop2"></select>
+
+        <br><br><br>
+        <span>{{selected1.prop1}}</span>
+        <span>{{selected1.prop2}}</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html ng-app="SempleApp">
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+    <style>
+        .white{
+            background-color: white;
+        }
+        .class1 {
+            background-color: lightgreen;
+        }
+
+        .class2 {
+            background-color: lightblue;
+        }
+    </style>
+<script src="Libraries/angular.js"></script>
+    <script>
+   var app=angular.module('SempleApp',[]);
+
+      app.controller('SempleAppCtrl',function ($scope) {
+            $scope.item=[{name:'Item1',value:'value1',properti:'proprti 1'},
+                {name:'Item2',value:'value2',properti:'proprti 2'},
+                { name: "Item 3", value: "Value 3",properti:'proprti 3' },
+                { name: "Item 4", value: "Value 4",properti:'proprti 4' },
+                { name: "Item 5", value: "Value 5",properti:'proprti 5' }];
+      })
+
+    </script>
+</head>
+
+<body >
+    <div ng-controller="SempleAppCtrl">
+        <div>
+            Количество элементов в масива {{item.length}}.
+        </div>
+        <div>
+            Количество элементов в масива <span ng-bind="item.length"></span>.
+        </div>
+        <div ng-bind-template="Первый элемент массива- {{item[0].name}}.Второй элемент массива- {{item[1].name}}.">
+
+        </div>
+        <div ng-non-bindable>
+            Количество элементов в масива{{может быть сколько угодно}}.
+        </div>
+        <div>
+            Список Елементов
+           <!-- <ul>
+              <li ng-repeat="it in item">{{it.name}}</li>
+            </ul>-->
+        </div>
+        <div>
+            <p>
+                <input type="text" value="{{item[1].name}}"/>
+            </p>
+            <p>
+                <input type="text" ng-model="item[1].name"/>
+            </p>
+        </div>
+
+
+
+
+
+    <div style="margin:10px 50px 50px 100px; border: 1px solid black">
+        <table>
+            <thead class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="ite in item">
+                <td>{{ite.name}}</td>
+                <td>{{ite.value}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div>
+            <p ng-repeat="itema in item">
+                <span ng-repeat=" propert in itema">{{propert}}</span>
+            </p>
+        </div>
+        <div>
+            <p ng-repeat="iteme in item">
+                <span ng-repeat=" (key,value) in iteme">ключ: {{key}}; значение: {{value}}; </span>
+            </p>
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Name</td>
+                        <td>Value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="itema in item">
+                        <td>{{$index+1}}</td>
+                        <td>{{itema.name}}</td>
+                        <td>{{itema.value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Value</td>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Переменная $even содержит значение true если элемент четный, иначе false.
+                 Переменная $odd содержит значение true если элемент нечетный, иначе false-->
+                <tr ng-repeat="itema in item" ng-class="$even? 'class1':'class2' ">
+                    <td class="white">{{$index+1}}</td>
+                    <td>{{itema.name}}</td>
+                    <td>{{itema.value}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>name</td>
+                        <td>value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="itema in item">
+                        <td>
+                            {{$index+1}}
+                            <span ng-if="$first">ferst</span>
+                            <span ng-if="$last">last</span>
+                        </td>
+                        <td>{{itema.name}}</td>
+                        <td>{{itema.value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <p ng-repeat-start="itema in item">
+
+                №{{$index+1}}
+            </p>
+            <span>{{itema.name}}</span>
+            <span>{{itema.value}}</span>
+            <br ng-repeat-end/>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+///   $0.removeChild($0.children[1]) удалял из таблицы просто для примера
+//    $0.removeChild($0.childNodes[3]) //////
 var table = document.getElementsByTagName('table')[0];
 
 //table.removeChild();
@@ -27,7 +29,7 @@ function Table(elem){
 
         var row= this.rows;
         var arr=[];
-        for(var i=1;i<row.length;i++){
+        for( i=1;i<row.length;i++){
             arr.push(this.rows[i])
         }
          arr= self[action](e,arr);

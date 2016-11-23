@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html ng-app="IncludedApp">
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+
+<script src="Libraries/angular.js"></script>
+    <script>
+            var IncludedApp=angular.module('IncludedApp',[]);
+
+            IncludedApp.controller('IncludedAppCtrl',function ($scope) {
+                $scope.items=['Item1','Item2','Item3','Item4'];
+                $scope.selected='Item1';
+
+                $scope.it = [{ prop1: "item 1", prop2: 1 },
+                    { prop1: "item 2", prop2: 2 },
+                    { prop1: "item 3", prop2: 3 }];
+                $scope.selected1 = $scope.it[0];
+                $scope.ShowList=function () {
+                    $scope.url = "list.html";
+                };
+                $scope.ShowTable=function () {
+                    $scope.url = "table.html";
+                }
+
+            })
+    </script>
+</head>
+
+<body >
+    <div ng-controller="IncludedAppCtrl">
+      <button ng-click="ShowList()">List</button>
+        <button ng-click="ShowTable()">Table</button>
+
+
+        <h3>HTML element</h3>
+        <!--Отдельный HTML элемент-->
+        <ng-include src="url"></ng-include>
+
+
+
+    </div>
+</body>
+
+</html>

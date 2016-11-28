@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html ng-app="formApp">
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+    <script src="Libraries/angular.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/dopstyle.css" rel="stylesheet" media="screen">
+<!-- подключение файла css -->
+    <style>
+
+    </style>
+
+    <script>
+       angular.module('formApp',[])
+               .controller('formAppCtrl',function ($scope) {
+                   $scope.tasks = [
+                       { action: "Task 1", complete: false, priority: "Normal" },
+                       { action: "Task 2", complete: true, priority: "Normal" },
+                       { action: "Task 3", complete: false, priority: "Normal" },
+                       { action: "Task 4", complete: true, priority: "Normal" }
+                   ];
+                   $scope.addTask=function (task) {
+                       if(angular.isDefined(task)&&
+                               angular.isDefined(task.action)&&
+                               angular.isDefined(task.priority)){
+                           $scope.tasks.push({
+                               action:task.action,
+                               complete:false,
+                               priority:task.priority
+                           })
+                       }
+
+                   }
+               })
+    </script>
+</head>
+
+<body>
+
+    <div class=" contanir  " ng-controller="formAppCtrl">
+<div class="row">
+        <div class=" col-md-4 wall ">
+            <div class="form-group wall">
+                <div class="form-group">
+                    <label> Впишите задание </label>
+                        <input type="text" class="form-control" ng-model="task.action">
+
+                </div>
+               <div class="form-group">
+                   <label for="actionPriority">Выбирете уровень сложности</label>
+                   <select id="actionPriority" class="form-control" ng-model="task.priority">
+                       <option>High</option>
+                       <option>Normal</option>
+                       <option>Low</option>
+                   </select>
+
+               </div>
+
+                <button class="btn btn-primary btn-block "ng-click="addTask(task)" > Отправить</button>
+            </div>
+
+        </div>
+
+        <div class="panel text-center panel-primary col-md-8">
+            <div class="panel-heading ">
+                <h3>
+                    Незавершенные задачи
+                    <span class="label label-info">
+                        <!--
+                            filter - позволяет из массива выбрать набор элементов и вернуть их в виде нового массива
+                            Подробнее фильтры будут рассмотрены в следящем уроке.
+                            Выражение установленное ниже позволяет из массива tasks извлечь все элементы и те которые содержат свойство complete со значением false
+                            поместить в новый массив, после чего определяется размерность нового массива и полученное значение выводиться в разметке.
+                        -->
+                        {{(tasks | filter : {complete : 'false'} ).length}}
+                    </span>
+                </h3>
+            </div>
+
+            <div class="panel panel-default">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr ng-repeat="task in tasks">
+                        <td>{{task.action}}</td>
+                        <td><input type="checkbox" ng-model="task.complete" />
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+        </div>
+
+</div>
+    </div>
+</body>
+
+</html>

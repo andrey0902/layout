@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/dopstyle.css" rel="stylesheet" media="screen">
+</head>
+   
+<body>
+
+    <div class="container">
+        <div class="form-group has-success">
+            <label class="control-label" for="succ">Поле без ошибок</label>
+            <input type="text" class="form-control" id="succ">
+        </div>
+        <div class="form-group has-warning">
+            <label class="control-label" for="warn">Поле с предупреждением</label>
+            <input type="text" class="form-control" id="warn">
+        </div>
+        <div class="form-group has-error">
+            <label class="control-label" for="err">Поле с ошибкой</label>
+            <input type="text" class="form-control" id="err">
+        </div>
+        <div class="has-success">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="check-succ" value="option1">
+                    Чекбокс без ошибок
+                </label>
+            </div>
+        </div>
+        <div class="has-warning">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="check-warn" value="option1">
+                    чекбокс с предупреждением
+                </label>
+            </div>
+        </div>
+        <div class="has-error">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="checkboxError" value="option1">
+                    Чекбокс с ошибкой
+                </label>
+            </div>
+        </div>
+__________________________________
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Электропочта</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">email@example.com</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pass" class="col-sm-2 control-label">Пароль</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="pass" placeholder="Пароль">
+                </div>
+            </div>
+        </form>
+        <br>
+        _____________________
+        <div class="col-sm-3">
+            <select class="form-control" name="city" size="1">
+                <option value="uk">Ukrain</option>
+                <option value="usa">Usa</option>
+                <option value="hi">China</option>
+                <option value="bl">Belarys</option>
+            </select>
+        </div>
+        <br> <br> <br>
+        <div class="checkbox-inline">
+            <label >
+                <input type="radio" name="p">  1
+            </label>
+        </div>
+        <div class="checkbox-inline">
+            <label >
+                <input type="radio" name="p">  2
+            </label>
+        </div>
+        <br/>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="radio1" value="option1"> 1
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="radio2" value="option2"> 2
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="radio3" value="option3"> 3
+        </label>
+        <br>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+        </label>
+       ___________
+        <div class="checkbox">
+            <label >
+                <input type="checkbox" name="tes1" value="option"> Первый чекбокс
+            </label>
+        </div>
+        <div class="checkbox">
+            <label >
+                <input type="checkbox"name="tes1"value="opt2">Второй чекбокс
+            </label>
+        </div>
+        <div class="radio">
+            <label >
+                <input type="radio" name="chi" value="hi">Ferst radio
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="chi" value="ci">Last radio
+            </label>
+        </div>
+
+        <br/>
+        <form role="form" class="form-inline">
+            <div class="form-group">
+                <label for="name">Введите имя</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="pass">Введите пароль</label>
+                <input type="password" id="pass" class="form-control">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox"> Чекбокс</label>
+            </div>
+            <div class="form-group">
+                <input type="button" value="Отправить" name="sumbit" class="form-control btn btn-primary">
+            </div>
+        </form>
+
+        <br/><br/>
+        <form action="#" role="form" class="form-horizontal">
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="EMAIL" id="email" placeholder="Email" name="email" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pass1" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" placeholder="password" id="pass1" name="pass" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="act" >Запомнить в системе
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="button" class="btn btn-success" name="submit" value="Отправить">
+                </div>
+            </div>
+        </form>
+
+
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <img class="img-responsive img-circle" id="img1" src="http://открытки.kz/uploads/5/7/3/5737-otkritki-Otkritka-kartinka-privet-privetik-zhelayu.jpg" alt="img" >
+        </div>
+        <div class="col-md-2 form-group ">
+            <input type="range" min="0" max="1" step="0.1" value="1" id="range" >
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.js"></script>
+    <script src="locked.js.js"></script>
+</body>
+
+</html>

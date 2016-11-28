@@ -1,0 +1,48 @@
+.dop{
+  margin:10px;
+  border: 2px dashed cornflowerblue;
+}
+.margin{
+  margin-left: 10px;
+}
+.border-container{
+  border:1px solid royalblue;
+}
+.head-block{
+  height:250px;
+  background:url(../images/head.jpg)left center no-repeat;
+}
+.head-block{
+
+  background: url(../images/head.jpg);
+}.top-menu{
+   }
+.top-menu ul{
+  padding-left:0;
+  margin-bottom:0;
+}
+.top-menu li{
+  display:inline-block;
+  margin-left:10px;
+  padding:3px 10px;
+}
+.boc{
+  border: 1px solid burlywood;
+
+ height: 300px;
+}
+.boc1{
+  border: 1px solid burlywood;
+
+  height: 100px;
+}
+.boc2{
+  border: 1px solid burlywood;
+
+  height: 100px;
+}
+.head-block{
+  height: 200px;
+
+
+}

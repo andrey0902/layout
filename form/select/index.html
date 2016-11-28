@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/dopstyle.css" rel="stylesheet" media="screen">
+</head>
+   
+<body>
+___
+    <div class="container">
+        <div class="row form_order">
+            <div class="col-md-offset-2 col-md-8">
+
+                <form action="#" method="get" id="form1" role="form" class="form-horizontal" name="reg">
+                    <div class="panel-group">
+                        <div class="panel panel-primary well">
+                            <div class="panel panel-heading text-center ">
+                                Форма заказа товара
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-2 control-label">ФИО</label>
+                        <div class="col-md-10">
+                            <input type="search"  required="required" pattern="/[\w+|\W+]\s[\w+|\W+]\s\[\w+|\W+]/ig" id="name" class="form-control" name="name" value="" placeholder="Фамилия Имя Отчество" >
+                        </div>
+                    </div>
+                    <div class="form-group " id="age">
+                        <label class="col-md-2 control-label">Ваш возраст </label>
+                        <div class="col-md-4">
+                            <input type="date" name="age" class=" form-control " required="required">
+                        </div>
+                        <div class=" col-md-6  ppp" id="age_error"style="display:none">
+                            <p class="form-control-static has-error">Лицам не достигнувшим 18 лет доступ ограничен</p>
+                        </div>
+                    </div>
+                    <div class="form-group" id="placeOrder">
+                        <label  class="col-md-2 control-label">Адресс доставки</label>
+                        <div class="col-md-3" id="countri">
+                            <select name="countri" id="country"  class="form-control" size="1">
+
+                            </select>
+                        </div>
+                        <div class="col-md-3" id="state">
+                            <select name="state" class="form-control" id="stat" size="1">
+
+                            </select>
+
+                        </div>
+                        <div class="col-md-3" id="sity">
+                            <select name="sity" id="sit" class="form-control">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label  class="control-label">Форма оплаты</label>
+                        </div>
+                        <div class=" col-md-6">
+                            <div class="tabs">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#tab-1" data-toggle="tab">Visa</a></li>
+                                    <li><a href="#tab-2" data-toggle="tab">PayPal</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="tab-1">
+                                       <div class="form-group visa">
+                                           <label for="vis" class="col-sm-4 control-label"> Card number</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" name="vis" id="vis" class="form-control">
+                                        </div>
+
+                                       </div>
+                                        <div class="form-group">
+                                            <label for="ear" class="col-sm-4 control-label">Ear card</label>
+                                            <div class="col-sm-8">
+                                                <input type="date" name="visa_ear" class="form-control" id="ear">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardName" class="col-sm-4 control-label">Cardholder name</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="cardName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvc" class="col-md-4 control-label">CVC card</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" id="cvc" name="cvc" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tab-2">
+                                         <p>222222222</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-4 checkbox">
+                            <label >
+                                <input type="checkbox" id="license"> Принять соглашения
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-md-1">
+                            <input type="submit" data-toggle="modal" data-target="#myModal" name="123" id="sabmit11" class="btn btn-primary" value="Отправить">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div>
+    <!-- Навигация -->
+    <ul class="nav nav-pills" role="tablist">
+        <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Домой</a></li>
+        <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Профиль</a></li>
+        <li><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Сообщения</a></li>
+        <li><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Настройки</a></li>
+    </ul>
+    <!-- Содержимое вкладок -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">Text111111</div>
+        <div role="tabpanel" class="tab-pane" id="profile">Text222222</div>
+        <div role="tabpanel" class="tab-pane" id="messages">Text33333333</div>
+        <div role="tabpanel" class="tab-pane" id="settings">Text44444444</div>
+    </div>
+</div>
+
+<br>
+<button type="button" id="show" class="btn btn-success">нажми на меня</button>
+<br>
+<button class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#myModal">Показать всплывающее окно</button>
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Заголовок окна</h4>
+            </div>
+            <div class="modal-body">Текст уведомления</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>
+        </div>
+    </div>
+</div>
+<br>
+<div>
+    lsd;ksdfjkla;lsgjl;ask <br>
+    lsda;kjflk;fks;<br>
+    sad;lgkjfals;dgkgjkl<br>
+    a;sldgjlaskgjf<br>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.js"></script>
+    <script src="order.js" async></script>
+</body>
+
+</html>

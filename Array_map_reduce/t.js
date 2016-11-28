@@ -1,4 +1,87 @@
-var arr = [ 1, 5,-3,-7,2,8,0,-88];
+function count2(){
+	var count1=1;
+	return function(){
+	return	count1++;
+	
+	}
+}
+
+var Count= count2();
+
+Count();
+Count();
+
+console.log(Count());
+
+
+var Count3= count2();
+
+Count3();
+Count3();
+Count3();
+console.log(Count3());
+
+var arr = ['vasa1','vasa1','vasa','vasa','vasa','andrey2','andrey2','andrey','lexa','lexa','lexa','lexa3'];
+
+function selector(arr){
+var	mas=[];
+var rezault=[];	
+var obj={};
+	arr.forEach(function(elem){
+		if(!obj[elem]){
+			obj[elem]=1;
+		}else{
+			obj[elem] +=1;
+		}
+	})
+	for(var key in obj){
+	  mas.push(key);
+}
+rezault=mas.sort(function(a,b){
+	return obj[b]-obj[a];
+})
+	return mas;
+}
+
+;
+console.log(selector(arr))
+
+var arr1 = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор",'вася'];
+
+function anagram(arr){
+	var obj={};
+	var rezault=[];
+for(var i=0; i<arr.length;i++){
+  var key =	arr[i].toLowerCase().split('').sort().join('');
+  obj[key]=arr[i];
+}
+for(var key1 in obj) rezault.push(obj[key1]);
+return rezault;
+}
+
+console.log(anagram(arr1));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function filterRange(arr,a,b) {
 	var newArr= arr.filter(function(item){

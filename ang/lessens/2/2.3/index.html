@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html ng-app="SempleApp">
+<head>
+<meta charset="utf-8" >
+<title> Заголовок </title>
+<meta name="description" content=" Уроки по html">
+<meta name="keywords" content=" Описание о чем наш сайт для поисковых систем ">
+<!-- подключение файла css -->
+    <style>
+        div.test {
+            background-color:green;
+            width:100px;
+            height:100px;
+            color:white;
+            padding:4px;
+        }
+        .green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+
+
+        .lightGreen {
+            background-color: lightgreen;
+        }
+
+        .lightBlue {
+            background-color: lightblue;
+        }
+
+        .lightCoral {
+            background-color: lightcoral;
+        }
+        .test-div {
+            border:1px solid black;
+            width:100px;
+            height:100px;
+            padding:10px;
+        }
+    </style>
+<script src="Libraries/angular.js"></script>
+    <script>
+        var SempleApp=angular.module('SempleApp',[]);
+        SempleApp.controller('SempleAppCtrl',function ($scope) {
+            $scope.SelectedClass='lightGreen';
+
+            $scope.className=[{ displayName: "Light Green", value: "lightGreen" },
+                { displayName: "Light Blue", value: "lightBlue" },
+                { displayName: "Light Coral", value: "lightCoral" }];
+
+        $scope.styleObj={border:'1px solid black',
+                            color:'red',
+                            marginTop: '50px',
+                            heigth: '100px',
+                            width: '100px',
+                                background: 'yellow'
+        };
+            $scope.items = ["item1", "item2", "item3", "item4", "item5"];
+            $scope.class1 = "green";
+            $scope.class2 = "red";
+
+            $scope.type;
+            $scope.hendEvent=function(event){
+                console.log(event);
+                $scope.type=event.type;
+
+            }
+            $scope.clickHandle=function(color){
+                alert(color);
+            }
+            $scope.dataValue=false;
+        })
+
+    </script>
+</head>
+
+<body ng-controller="SempleAppCtrl">
+    <div class="radio" name="color" ng-repeat="item in className">
+      <label>
+        <input type="radio" ng-model="$parent.SelectedClass" value="{{item.value}}"/> {{item.displayName}}
+      </label>
+    </div>
+    <br/>
+    <div class="test-div" ng-class="SelectedClass">спрятать 1</div>
+
+<div ng-style="styleObj"> Hellow</div>
+
+    <div>
+        <ul>
+            <li ng-repeat="item in items"
+                ng-class-even="class1"
+                ng-class-odd="class2">{{item}}</li>
+        </ul>
+    </div>
+
+<div class="test" ng-mouseenter="hendEvent($event)" ng-mouseleave="hendEvent($event)">
+{{type}}
+</div>
+
+<ul>
+    <li ng-repeat="item in ['red','blue','yellow','green']" ng-click="clickHandle(item)">{{item}}</li>
+</ul>
+
+<input type="checkbox" ng-model="dataValue"/>
+
+
+<button ng-disabled="dataValue">ng-disabled</button>
+
+
+</body>
+
+</html>

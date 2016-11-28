@@ -1,0 +1,70 @@
+#country{
+
+}
+.visa{
+  margin-top: 10px;
+}
+.ppp{
+  -webkit-transition: display 1s ease-out 0.5s;
+  -moz-transition: display 1s ease-out 0.5s;
+  -o-transition: display 1s ease-out 0.5s;
+  transition: topdisplay 3s;
+
+  padding-left: 5px;
+  border: 0px solid #a94442;
+  border-radius: 4px;
+}
+.form_order{
+  margin-top:30px;
+}
+.container{
+  border: 1px dotted #4a46db;
+}
+.dop{
+  margin:10px;
+  border: 2px dashed cornflowerblue;
+}
+.margin{
+  margin-left: 10px;
+}
+.border-container{
+  border:1px solid royalblue;
+}
+.head-block{
+  height:250px;
+  background:url(../images/head.jpg)left center no-repeat;
+}
+.head-block{
+
+  background: url(../images/head.jpg);
+}.top-menu{
+   }
+.top-menu ul{
+  padding-left:0;
+  margin-bottom:0;
+}
+.top-menu li{
+  display:inline-block;
+  margin-left:10px;
+  padding:3px 10px;
+}
+.boc{
+  border: 1px solid burlywood;
+
+ height: 300px;
+}
+.boc1{
+  border: 1px solid burlywood;
+
+  height: 100px;
+}
+.boc2{
+  border: 1px solid burlywood;
+
+  height: 100px;
+}
+.head-block{
+  height: 200px;
+
+
+}
